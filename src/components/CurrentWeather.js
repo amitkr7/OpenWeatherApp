@@ -15,17 +15,17 @@ const CurrentWeather = ({ currentTemp, humidity, pressure, windSpeed }) => {
       <div className='right'>
         Humidity
         <i className='fas fa-cloud-sun-rain'></i>
-        <span>{humidity} </span>
+        <span>{humidity} %</span>
       </div>
       <div className='right'>
         Pressure
         <i className='fas fa-compress-arrows-alt'></i>
-        <span>{pressure} </span>
+        <span>{pressure} hPa</span>
       </div>
       <div className='right'>
         WindSpeed
         <i className='fas fa-wind'></i>
-        <span>{windSpeed} </span>
+        <span>{windSpeed} m/s </span>
       </div>
     </div>
   )
