@@ -18,7 +18,7 @@ function Home() {
   const [windSpeed, setWindSpeed] = useState('')
   const [hourlyForecast, setHourlyForecast] = useState([])
   const [dailyForecast, setDailyForecast] = useState([])
-  const [currentWeather, setCurrentWeather] = useState(true)
+  const [currentWeather, setCurrentWeather] = useState(false)
   const [hourlyWeather, setHourlyWeather] = useState(false)
   const [dailyWeather, setDailyWeather] = useState(false)
 
@@ -32,7 +32,7 @@ function Home() {
     )
 
     if (!data) return
-
+    setCurrentWeather(true)
     setCurrentTemp(data.current.temp)
     setHumidity(data.current.humidity)
     setPressure(data.current.pressure)
@@ -56,18 +56,21 @@ function Home() {
   }
 
   const handleCurrent = () => {
+    setCity('')
     setCurrentWeather(true)
     setHourlyWeather(false)
     setDailyWeather(false)
   }
 
   const handleHourly = () => {
+    setCity('')
     setCurrentWeather(false)
     setHourlyWeather(true)
     setDailyWeather(false)
   }
 
   const handleDaily = () => {
+    setCity('')
     setCurrentWeather(false)
     setHourlyWeather(false)
     setDailyWeather(true)
