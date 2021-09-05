@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import Home from './components/Home'
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
 
   return (
     <div className={theme}>
-      <button onClick={() => handleClick()} className={`left ${theme}`}>
+      <button onClick={() => handleClick()} className={`btn left ${theme}`}>
         {themeName}
       </button>
       <Home />

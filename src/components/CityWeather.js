@@ -3,8 +3,7 @@ import dotenv from 'dotenv'
 import axios from 'axios'
 import CurrentWeather from './CurrentWeather'
 
-const CityWeather = () => {
-  const [city, setCity] = useState('')
+const CityWeather = ({ city }) => {
   const [currentTemp, setCurrentTemp] = useState('')
   const [humidity, setHumidity] = useState('')
   const [pressure, setPressure] = useState('')
@@ -30,34 +29,13 @@ const CityWeather = () => {
     }
   }, [city])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
-
-  const handleChange = (e) => {
-    setCity(e.target.value)
-  }
-
   return (
-    <>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input
-          type='text'
-          className='search-box'
-          onChange={(e) => handleChange(e)}
-        />
-      </form>
-      {city ? (
-        <CurrentWeather
-          currentTemp={currentTemp}
-          humidity={humidity}
-          pressure={pressure}
-          windSpeed={windSpeed}
-        />
-      ) : (
-        ''
-      )}
-    </>
+    <CurrentWeather
+      currentTemp={currentTemp}
+      humidity={humidity}
+      pressure={pressure}
+      windSpeed={windSpeed}
+    />
   )
 }
 
